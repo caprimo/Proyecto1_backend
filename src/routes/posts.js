@@ -41,6 +41,7 @@ router.get('/:username', (req, res) => {
         const username = req.params.username
         users.findOne({'username': username}, (err, user) =>{
             posts.findOne({'author': user._id}, (err, post) => {
+                console.log();
                 res.send(post)
             });
         });
